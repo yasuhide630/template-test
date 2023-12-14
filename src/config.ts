@@ -1,7 +1,7 @@
 import { isProduction } from "@yext/pages/util";
 import { provideHeadless } from "@yext/search-headless-react";
 import type { ConfigurationProviderContextType } from "@yext/sites-react-components";
-// import { SandboxEndpoints } from "@yext/search-headless-react"; // Add if using a sandbox account
+import { SandboxEndpoints } from "@yext/search-headless-react"; // Add if using a sandbox account
 
 const config: ConfigurationProviderContextType = {
   components: {},
@@ -31,10 +31,10 @@ export const getSearchProvider = (
 
   return provideHeadless({
     apiKey,
-    experienceKey: "locator",
+    experienceKey: "test-search",
     locale,
     verticalKey: "locations",
     experienceVersion,
-    // endpoints: SandboxEndpoints // Add if using a sandbox account
+    endpoints: SandboxEndpoints // Add if using a sandbox account
   });
 };
